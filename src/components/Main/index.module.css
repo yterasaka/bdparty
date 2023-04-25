@@ -4,11 +4,18 @@
   justify-content: center;
   align-items: center;
   z-index: 0;
+  margin-top: 10px;
   margin-bottom: 150px;
 }
 
+.image {
+  margin-top: 75px;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
 .textContainer {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   text-align: center;
 }
 
@@ -20,15 +27,6 @@
 .text {
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
-}
-.mail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.icon {
-  font-size: 2.2rem;
 }
 
 @media screen and (max-width: 640px) {

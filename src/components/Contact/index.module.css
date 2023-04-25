@@ -1,0 +1,74 @@
+.container {
+  background-color: rgb(240, 120, 120);
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formElement {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "areaA areaB areaB";
+  width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  grid-area: areaA;
+  font-size: 1.1rem;
+  padding-top: 10px;
+}
+.formInput {
+  grid-area: areaB;
+  border-radius: 3px;
+  border: none;
+  background-color: #fff;
+  padding: 10px 10px;
+  font-size: 1.1rem;
+}
+.formInput:focus {
+  outline: none;
+}
+
+.textarea {
+  resize: none;
+  height: 150px;
+}
+
+.submitButton {
+  padding: 5px 10px;
+  width: 80px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  margin-top: 1.5rem;
+  color: #000;
+}
+
+.submitButton:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    width: 100vw;
+    border-radius: 0;
+  }
+  .formElement {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .formLabel {
+    margin-bottom: 10px;
+  }
+}
