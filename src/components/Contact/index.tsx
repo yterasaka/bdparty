@@ -25,6 +25,7 @@ const Contact = () => {
     emailjs.sendForm(serviceId, templateId, formElement, publicKey).then(
       (result: EmailJSResponseStatus) => {
         console.log(result.text);
+        window.alert("Message sent.");
         window.location.reload();
       },
       (error: Error) => {
@@ -41,6 +42,7 @@ const Contact = () => {
           <input
             type="text"
             name="user_name"
+            placeholder="name"
             className={styles.formInput}
             required
           />
@@ -50,6 +52,7 @@ const Contact = () => {
           <input
             type="email"
             name="user_email"
+            placeholder="your@examle.com"
             className={styles.formInput}
             required
           />
