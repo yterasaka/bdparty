@@ -13,8 +13,10 @@ const Karaoke = () => {
       </div>
       <div className={styles.textContainer}>
         <h4 className={styles.title}>Allumer le feu</h4>
-        <p className={styles.text}>Merci de m’envoyer ton souhait</p>
-        <p className={styles.text}>&gt; TITRE et NOM de l’artiste/groupe</p>
+        <p className={styles.text}>
+          Dès à présent réservations pour le karaoké,
+        </p>
+        <p className={styles.text}>&gt; TITRE et NOM de l’artiste/groupe.</p>
       </div>
       <div className={styles.mail}>
         <TbArrowNarrowDown className={styles.icon} />

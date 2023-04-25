@@ -23,13 +23,12 @@ const Main = () => {
         <p className={styles.text}>
           Journée Tartes Flambées autour du Tilleul.
         </p>
-        <p className={styles.text}>
-          Une dernière fête avant les au-revoir à notre maison.
-        </p>
-        <p className={styles.text}>
-          Musique, joie, larmes, danse, karoké, ambiance garantie.
-        </p>
+        <p className={styles.text}>Une dernière fête avant les au-revoir</p>
+        <p className={styles.text}>à notre chère maison.</p>
+        <p className={styles.text}>Musique, joie, larmes, danse,</p>
+        <p className={styles.text}>karaoké, ambiance de ouf.</p>
       </div>
+      <hr className={styles.hr} />
     </div>
   );
 };

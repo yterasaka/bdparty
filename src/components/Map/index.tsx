@@ -10,12 +10,10 @@ const Map = () => {
         <Image src={car} width={100} height={100} alt="Icon" />
       </div>
       <div className={styles.textContainer}>
-        <h4 className={styles.title}>A Jebsheim, au 15 rue de Riedwihr.</h4>
+        <h4 className={styles.title}>Garer sa Merco</h4>
+        <p className={styles.text}>A Jebsheim, au 15 rue de Riedwihr.</p>
         <p className={styles.text}>
-          Stationnement le long du trottoir côté face à la maison,
-        </p>
-        <p className={styles.text}>
-          car c’est dans un tournant. Ou vers la place des Tilleuls.
+          Stationnement sur la place des Tilleuls only.
         </p>
       </div>
       <div className={styles.googleMapWrapper}>

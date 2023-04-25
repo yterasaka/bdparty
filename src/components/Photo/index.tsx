@@ -10,7 +10,7 @@ const Photo = () => {
       </div>
       <div className={styles.textContainer}>
         <h4 className={styles.title}>Cheeeeeeeese</h4>
-        <p className={styles.text}>Galerie photo de l’événement à venir...</p>
+        <p className={styles.text}>Soon, galerie photo de la jebtzparty.</p>
       </div>
     </div>
   );
