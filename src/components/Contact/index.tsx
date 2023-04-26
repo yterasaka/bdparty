@@ -52,7 +52,7 @@ const Contact = () => {
           <input
             type="email"
             name="user_email"
-            placeholder="your@examle.com"
+            placeholder="your@example.com"
             className={styles.formInput}
             required
           />
@@ -66,7 +66,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <input type="submit" value="SUBMIT" className={styles.submitButton} />
+          <input type="submit" value="SEND" className={styles.submitButton} />
         </div>
       </form>
     </div>
