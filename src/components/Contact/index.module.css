@@ -21,13 +21,18 @@
   margin-bottom: 1.5rem;
 }
 
+.formInputWrapper {
+  grid-area: areaB;
+  display: flex;
+  flex-direction: column;
+}
+
 .formLabel {
   grid-area: areaA;
   font-size: 1.1rem;
   padding-top: 10px;
 }
 .formInput {
-  grid-area: areaB;
   border-radius: 3px;
   border: none;
   background-color: #fff;
@@ -41,6 +46,12 @@
 .textarea {
   resize: none;
   height: 150px;
+  font-family: "Roboto", sans-serif;
+}
+
+.errorMessage {
+  color: #ffeaea;
+  margin-top: 5px;
 }
 
 .submitButton {

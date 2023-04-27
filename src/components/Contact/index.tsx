@@ -57,42 +57,55 @@ const Contact = () => {
       >
         <div className={styles.formElement}>
           <label className={styles.formLabel}>NAME</label>
-          <input
-            placeholder="name"
-            className={styles.formInput}
-            {...register("name", {
-              required: "Please enter your name",
-            })}
-          />
-          <p>{errors.name?.message}</p>
+          <div className={styles.formInputWrapper}>
+            <input
+              placeholder="name"
+              className={styles.formInput}
+              {...register("name", {
+                required: "Please enter your name",
+              })}
+            />
+            {errors.name && (
+              <p className={styles.errorMessage}>{errors.name?.message}</p>
+            )}
+          </div>
         </div>
 
         <div className={styles.formElement}>
           <label className={styles.formLabel}>EMAIL</label>
-          <input
-            placeholder="your@example.com"
-            className={styles.formInput}
-            {...register("email", {
-              required: "Please enter your email address",
-              pattern: {
-                value:
-                  /([a-zA-Z0-9\+_\-]+)(\.[a-zA-Z0-9\+_\-]+)*@([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}/,
-                message: "Invalid email address",
-              },
-            })}
-          />
-          <p>{errors.email?.message}</p>
+          <div className={styles.formInputWrapper}>
+            <input
+              placeholder="your@example.com"
+              className={styles.formInput}
+              {...register("email", {
+                required: "Please enter your email address",
+                pattern: {
+                  value:
+                    /([a-zA-Z0-9\+_\-]+)(\.[a-zA-Z0-9\+_\-]+)*@([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}/,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            {errors.email && (
+              <p className={styles.errorMessage}>{errors.email?.message}</p>
+            )}
+          </div>
         </div>
 
         <div className={styles.formElement}>
           <label className={styles.formLabel}>MESSAGE</label>
-          <textarea
-            className={`${styles.formInput} ${styles.textarea}`}
-            {...register("message", {
-              required: "Please enter your message",
-            })}
-          />
-          <p>{errors.message?.message}</p>
+          <div className={styles.formInputWrapper}>
+            <textarea
+              placeholder="your message"
+              className={`${styles.formInput} ${styles.textarea}`}
+              {...register("message", {
+                required: "Please enter your message",
+              })}
+            />
+            {errors.message && (
+              <p className={styles.errorMessage}>{errors.message?.message}</p>
+            )}
+          </div>
         </div>
 
         <input type="submit" value="SEND" className={styles.submitButton} />
