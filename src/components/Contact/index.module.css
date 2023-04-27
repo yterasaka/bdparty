@@ -1,6 +1,7 @@
 .container {
   background-color: rgb(240, 120, 120);
   border-radius: 5px;
+  width: 630px;
 }
 
 .form {
@@ -17,7 +18,7 @@
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: "areaA areaB areaB";
-  width: 550px;
+  width: 555px;
   margin-bottom: 1.5rem;
 }
 
