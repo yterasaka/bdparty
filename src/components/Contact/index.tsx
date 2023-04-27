@@ -1,6 +1,13 @@
 import React, { useRef } from "react";
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import styles from "./index.module.css";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const serviceId =
   process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "default_service_id";
@@ -12,8 +19,15 @@ const publicKey =
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (e, data) => {
+    // console.log(data);
 
     if (!form.current) {
       console.error("Form is not initialized.");
@@ -24,9 +38,9 @@ const Contact = () => {
 
     emailjs.sendForm(serviceId, templateId, formElement, publicKey).then(
       (result: EmailJSResponseStatus) => {
-        console.log(result.text);
+        // console.log(result.text);
         window.alert("Message sent.");
-        window.location.reload();
+        reset();
       },
       (error: Error) => {
         console.log(error.message);
@@ -36,38 +50,52 @@ const Contact = () => {
 
   return (
     <div className={styles.container}>
-      <form ref={form} onSubmit={sendEmail} className={styles.form}>
+      <form
+        ref={form}
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+      >
         <div className={styles.formElement}>
           <label className={styles.formLabel}>NAME</label>
           <input
-            type="text"
-            name="user_name"
             placeholder="name"
             className={styles.formInput}
-            required
+            {...register("name", {
+              required: "Please enter your name",
+            })}
           />
+          <p>{errors.name?.message}</p>
         </div>
+
         <div className={styles.formElement}>
           <label className={styles.formLabel}>EMAIL</label>
           <input
-            type="email"
-            name="user_email"
             placeholder="your@example.com"
             className={styles.formInput}
-            required
+            {...register("email", {
+              required: "Please enter your email address",
+              pattern: {
+                value:
+                  /([a-zA-Z0-9\+_\-]+)(\.[a-zA-Z0-9\+_\-]+)*@([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}/,
+                message: "Invalid email address",
+              },
+            })}
           />
+          <p>{errors.email?.message}</p>
         </div>
+
         <div className={styles.formElement}>
           <label className={styles.formLabel}>MESSAGE</label>
           <textarea
-            name="message"
             className={`${styles.formInput} ${styles.textarea}`}
-            required
+            {...register("message", {
+              required: "Please enter your message",
+            })}
           />
+          <p>{errors.message?.message}</p>
         </div>
-        <div>
-          <input type="submit" value="SEND" className={styles.submitButton} />
-        </div>
+
+        <input type="submit" value="SEND" className={styles.submitButton} />
       </form>
     </div>
   );
