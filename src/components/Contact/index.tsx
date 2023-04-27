@@ -18,7 +18,6 @@ const publicKey =
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
-
   const {
     register,
     handleSubmit,
@@ -26,9 +25,7 @@ const Contact = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (e, data) => {
-    // console.log(data);
-
+  const onSubmit: SubmitHandler<Inputs> = () => {
     if (!form.current) {
       console.error("Form is not initialized.");
       return;
@@ -38,7 +35,6 @@ const Contact = () => {
 
     emailjs.sendForm(serviceId, templateId, formElement, publicKey).then(
       (result: EmailJSResponseStatus) => {
-        // console.log(result.text);
         window.alert("Message sent.");
         reset();
       },
