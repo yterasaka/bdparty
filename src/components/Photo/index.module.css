@@ -25,6 +25,10 @@
   font-size: 1.1rem;
 }
 
+.image {
+  margin: 30px;
+}
+
 @media screen and (max-width: 640px) {
   .textContainer {
     margin-left: 15px;
