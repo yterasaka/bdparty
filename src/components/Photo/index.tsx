@@ -9,6 +9,7 @@ const Photo = () => {
       <div className={styles.icon}>
         <Image src={camera} width={100} height={100} alt="Icon" />
       </div>
+
       <div className={styles.textContainer}>
         <h4 className={styles.title}>Cheeeeeeeese</h4>
         <Image
@@ -19,15 +20,8 @@ const Photo = () => {
           className={styles.image}
         />
         <p className={styles.text}>
-          Merci à toutes et à tous pour cette journée, voici le{" "}
-          <a
-            href="https://photos.app.goo.gl/x5TmYJntEN9YexTu5"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            lien
-          </a>{" "}
-          des photos !
+          Pour le lien des photos envoyez moi votre mail par message, depuis
+          l&apos;encadré karaoke !
         </p>
       </div>
     </div>
